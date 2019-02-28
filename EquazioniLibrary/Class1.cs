@@ -24,5 +24,22 @@ namespace EquazioniLibrary
 
             return analisi;
         }
+
+        //Metodo per verificare se l'equazione di primo grado è IMPOSSIBILE
+        static bool IsInconsisted(double a, double b)
+        {
+            bool analisi = true; //Variabile di tipo 'bool' che stabilisce se l'equazione analizzata è IMPOSSIBILE
+
+            if (a != 0 && b != 0) //Un'equazione di primo grade è IMPOSSIBILE se il coefficiente 'a' è uguale a 0 e il coefficiente 'b' è diverso da 0
+            {
+                analisi = true;
+            }
+            else
+            {
+                analisi = false;
+            }
+
+            return analisi;
+        }
     }
 }
