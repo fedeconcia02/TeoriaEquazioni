@@ -62,7 +62,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 4, b = 0;
 
-            bool equazione = false;
+            bool equazione = true;
             bool risultato = EquazioniLibrary.Metodi.IsInconsisted(a, b);
 
             Assert.AreEqual(equazione, risultato);
@@ -73,7 +73,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0, b = 5;
 
-            bool equazione = true;
+            bool equazione = false;
             bool risultato = EquazioniLibrary.Metodi.IsInconsisted(a, b);
 
             Assert.AreEqual(equazione, risultato);
@@ -84,7 +84,7 @@ namespace EquazioniLibrary.Test
         {
             double a = -4, b = 0;
 
-            bool equazione = false;
+            bool equazione = true;
             bool risultato = EquazioniLibrary.Metodi.IsInconsisted(a, b);
 
             Assert.AreEqual(equazione, risultato);
@@ -95,7 +95,7 @@ namespace EquazioniLibrary.Test
         {
             double a = 0, b = -5;
 
-            bool equazione = true;
+            bool equazione = false;
             bool risultato = EquazioniLibrary.Metodi.IsInconsisted(a, b);
 
             Assert.AreEqual(equazione, risultato);
@@ -498,7 +498,7 @@ namespace EquazioniLibrary.Test
             string x = "Indeterminata";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con il coefficente "a" positivo e "b" uguale a 0
         [TestMethod]
@@ -506,10 +506,10 @@ namespace EquazioniLibrary.Test
         {
             double a = 4, b = 0;
 
-            string x = "0";
+            string x = "Impossibile";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con il coefficente "a" uguale a 0 e "b" positivo
         [TestMethod]
@@ -517,10 +517,10 @@ namespace EquazioniLibrary.Test
         {
             double a = 0, b = 5;
 
-            string x = "Impossibile";
+            string x = "0";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con il coefficente "a" negativo e "b" uguale a 0
         [TestMethod]
@@ -528,10 +528,10 @@ namespace EquazioniLibrary.Test
         {
             double a = -4, b = 0;
             
-            string x = "0";
+            string x = "Impossibile";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con il coefficente "a" uguale a 0 e "b" negativo
         [TestMethod]
@@ -539,10 +539,10 @@ namespace EquazioniLibrary.Test
         {
             double a = 0, b = -5;
 
-            string x = "Impossibile";
+            string x = "0";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con il coefficente "a" positivo e "b" negativo
         [TestMethod]
@@ -550,10 +550,10 @@ namespace EquazioniLibrary.Test
         {
             double a = 4, b = -5;
 
-            string x = "-1,25";
+            string x = "-0,8";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con il coefficente "a" negativo e "b" positivo
         [TestMethod]
@@ -561,10 +561,10 @@ namespace EquazioniLibrary.Test
         {
             double a = -4, b = 5;
 
-            string x = "-1,25";
+            string x = "-0,8";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con tutti i coefficenti positivi
         [TestMethod]
@@ -572,10 +572,10 @@ namespace EquazioniLibrary.Test
         {
             double a = 4, b = 5;
 
-            string x = "1,25";
+            string x = "0,8";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
         //Test con tutti i coefficenti negativi
         [TestMethod]
@@ -583,10 +583,10 @@ namespace EquazioniLibrary.Test
         {
             double a = -4, b = -5;
 
-            string x = "1,25";
+            string x = "0,8";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
-            Assert.AreEqual(Convert.ToDouble(x), Convert.ToDouble(risultato));
+            Assert.AreEqual(x, risultato);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace EquazioniLibrary
         {
             bool impossibile = false; //Variabile di tipo 'bool' che stabilisce se l'equazione analizzata è IMPOSSIBILE
 
-            if (a == 0 && b != 0) //Un'equazione di primo grade è IMPOSSIBILE se il coefficiente 'a' è uguale a 0 e il coefficiente 'b' è diverso da 0
+            if (a != 0 && b == 0) //Un'equazione di primo grade è IMPOSSIBILE se il coefficiente 'a' è uguale a 0 e il coefficiente 'b' è diverso da 0
             {
                 impossibile = true;
             }
@@ -62,11 +62,10 @@ namespace EquazioniLibrary
         {
             string risulato = "";
             bool tipo = false;
-
-            tipo = IsDetermined(a);
-            if (tipo==true)
+            
+            if (a==0 && b==0)
             {
-                risulato = "Indeterminata ";
+                risulato = "Indeterminata";
             }
 
             tipo = IsInconsisted(a, b);
@@ -74,11 +73,11 @@ namespace EquazioniLibrary
             {
                 if (risulato=="Indeterminata")
                 {
-                    risulato = "Indeterminata e impossibile ";
+                    risulato = "Indeterminata e impossibile";
                 }
                 else
                 {
-                    risulato = "Impossibile ";
+                    risulato = "Impossibile";
                 }
             }
 
