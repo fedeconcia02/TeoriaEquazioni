@@ -527,7 +527,7 @@ namespace EquazioniLibrary.Test
         public void TestMethod_EquationDegree4()
         {
             double a = -4, b = 0;
-
+            
             string x = "0";
             string risultato = EquazioniLibrary.Metodi.EquationDegree1(a, b);
 
